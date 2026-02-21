@@ -1,0 +1,9 @@
+**/__pycache__
+*/__pycache__
+/venv/
+*.sqlite3
+*.db
+
+*/migrations*/.py
+!*/migrations*/__init__.py
+/media/
