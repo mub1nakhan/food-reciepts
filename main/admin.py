@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Ingredient, Meal
+from .models import Ingredient, Meal,Comment
 
 class IngredientAdmin(admin.ModelAdmin):
     list_display =["id","name","quantity","unit","created_at","updated_at"]
@@ -19,3 +19,4 @@ class MealAdmin(admin.ModelAdmin):
     
 admin.site.register(Ingredient,IngredientAdmin)
 admin.site.register(Meal,MealAdmin)
+admin.site.register(Comment)
