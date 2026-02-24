@@ -29,7 +29,7 @@ border-radius:8px;
 {% if meal.image %}
     <img src="{{ meal.image.url }}" alt="{{ meal.name }}">
 {% else %}
-    <p>No image</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" alt="no_food_photo">
 {% endif %}
 
 <div class="meal-content">
