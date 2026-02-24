@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Taom qo'shish</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<input type="text" name="name" placeholder="Taom nomi"><br><br>
+
+<textarea name="description" placeholder="Description"></textarea><br><br>
+
+<input type="file" name="image"><br><br>
+
+<label>Ingredientlar:</label><br>
+
+{% for ingredient in ingredients %}
+
+<input type="checkbox" name="ingredients" value="{{ ingredient.id }}">
+
+{{ ingredient.name }}
+
+<br>
+
+{% endfor %}
+
+<br>
+
+<button type="submit">Saqlash</button>
+
+</form>
+
+{% endblock %}

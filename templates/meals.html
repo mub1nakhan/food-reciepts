@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+FoodR | Barcha taomlar
+{% endblock title %}
+
+{% block content %}
+
+<h2>Barcha taomlar</h2>
+
+<a href="{% url 'add_meal' %}" style="
+padding:10px 15px;
+background:#27ae60;
+color:white;
+text-decoration:none;
+border-radius:8px;
+">
++ Taom qo‘shish
+</a>
+
+<br><br>
+
+<div class="meal-grid">
+
+{% for meal in meals %}
+
+<div class="meal-card">
+
+{% if meal.image %}
+    <img src="{{ meal.image.url }}" alt="{{ meal.name }}">
+{% else %}
+    <p>No image</p>
+{% endif %}
+
+<div class="meal-content">
+
+<h3>
+<a href="{% url 'meal_detail' meal.id %}">
+{{ meal.name }}
+</a>
+</h3>
+
+<p>{{ meal.description|truncatewords:20 }}</p>
+
+<div class="ingredients">
+
+{% for ingredient in meal.ingredients.all %}
+
+<span>
+
+{{ ingredient.name }}
+
+</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock content %}

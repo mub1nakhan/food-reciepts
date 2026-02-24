@@ -205,7 +205,7 @@
     <div class="detail-container">
 
         <div class="detail-image">
-            <img src="{{ meal.image.url }}" alt="{{ meal.name }}">
+            <img src="{% if meal.image %}{{ meal.image.url }}{% else %}/static/no-image.png{% endif %}">
         </div>
 
         <div class="detail-info">
